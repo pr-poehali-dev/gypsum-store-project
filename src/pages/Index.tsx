@@ -77,22 +77,28 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold text-foreground">GYPSUM CREATIONS</h1>
-            <nav className="hidden md:flex gap-6">
-              {['home', 'catalog', 'about', 'delivery', 'contacts'].map(section => (
-                <button
-                  key={section}
-                  onClick={() => setActiveSection(section)}
-                  className={`text-sm transition-colors hover:text-primary ${
-                    activeSection === section ? 'text-primary font-semibold' : 'text-muted-foreground'
-                  }`}
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex gap-3">
+                <Button 
+                  variant="outline"
+                  onClick={() => setActiveSection('contacts')}
                 >
-                  {section === 'home' ? 'Главная' : 
-                   section === 'catalog' ? 'Каталог' :
-                   section === 'about' ? 'О нас' :
-                   section === 'delivery' ? 'Доставка' : 'Контакты'}
-                </button>
-              ))}
-            </nav>
+                  Контакты
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => setActiveSection('about')}
+                >
+                  О нас
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => setActiveSection('delivery')}
+                >
+                  Доставка
+                </Button>
+              </nav>
+            </div>
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="relative">
