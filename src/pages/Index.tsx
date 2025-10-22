@@ -241,26 +241,32 @@ const Index = () => {
         {activeSection === 'catalog' && (
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-center">Каталог товаров</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map(product => (
-                <Card key={product.id} className="overflow-hidden hover-scale transition-all">
-                  <CardContent className="p-0">
-                    <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
-                    <div className="p-6 space-y-3">
-                      <Badge variant="secondary">{product.category}</Badge>
-                      <h4 className="text-xl font-semibold">{product.name}</h4>
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-primary">{product.price} ₽</span>
-                        <Button onClick={() => addToCart(product)} className="bg-secondary hover:bg-secondary/90">
-                          <Icon name="ShoppingCart" size={18} className="mr-2" />
-                          В корзину
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Carousel className="w-full max-w-5xl mx-auto">
+              <CarouselContent>
+                {products.map(product => (
+                  <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="overflow-hidden hover-scale transition-all">
+                      <CardContent className="p-0">
+                        <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+                        <div className="p-6 space-y-3">
+                          <Badge variant="secondary">{product.category}</Badge>
+                          <h4 className="text-xl font-semibold">{product.name}</h4>
+                          <div className="flex items-center justify-between">
+                            <span className="text-2xl font-bold text-primary">{product.price} ₽</span>
+                            <Button onClick={() => addToCart(product)} className="bg-secondary hover:bg-secondary/90">
+                              <Icon name="ShoppingCart" size={18} className="mr-2" />
+                              В корзину
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         )}
 
