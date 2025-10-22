@@ -76,24 +76,30 @@ const Index = () => {
       <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-foreground">GYPSUM CREATIONS</h1>
-            <div className="flex items-center gap-4">
-              <nav className="hidden md:flex gap-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">GYPSUM CREATIONS</h1>
+            <div className="flex items-center gap-2 md:gap-4">
+              <nav className="flex gap-2 md:gap-3">
                 <Button 
                   variant="outline"
+                  size="sm"
                   onClick={() => setActiveSection('contacts')}
+                  className="text-xs md:text-sm"
                 >
                   Контакты
                 </Button>
                 <Button 
                   variant="outline"
+                  size="sm"
                   onClick={() => setActiveSection('about')}
+                  className="text-xs md:text-sm"
                 >
                   О нас
                 </Button>
                 <Button 
                   variant="outline"
+                  size="sm"
                   onClick={() => setActiveSection('delivery')}
+                  className="text-xs md:text-sm"
                 >
                   Доставка
                 </Button>
@@ -163,19 +169,19 @@ const Index = () => {
         {activeSection === 'home' && (
           <div className="space-y-16">
             <section className="text-center space-y-6">
-              <h2 className="text-5xl font-bold text-foreground mb-4">Изделия из гипса ручной работы</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Изделия из гипса ручной работы</h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
                 Создаём уникальные декоративные элементы для вашего интерьера. 
                 Высокое качество, индивидуальный подход, классическая элегантность.
               </p>
             </section>
 
             <section>
-              <h3 className="text-3xl font-bold mb-8 text-center">Популярные изделия</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Популярные изделия</h3>
               <Carousel className="w-full max-w-5xl mx-auto">
                 <CarouselContent>
                   {products.map(product => (
-                    <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={product.id} className="basis-full md:basis-1/2 lg:basis-1/3">
                       <Card className="overflow-hidden hover-scale transition-all">
                         <CardContent className="p-0">
                           <img 
@@ -204,9 +210,9 @@ const Index = () => {
               </Carousel>
             </section>
 
-            <section className="bg-muted rounded-lg p-8">
-              <h3 className="text-3xl font-bold mb-8 text-center">Наши работы</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <section className="bg-muted rounded-lg p-4 md:p-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Наши работы</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {galleryImages.map((img, idx) => (
                   <Dialog key={idx}>
                     <DialogTrigger asChild>
@@ -226,8 +232,8 @@ const Index = () => {
               </div>
             </section>
 
-            <section className="bg-card border border-border rounded-lg p-8 max-w-xl mx-auto">
-              <h3 className="text-3xl font-bold mb-6 text-center">Индивидуальный заказ</h3>
+            <section className="bg-card border border-border rounded-lg p-4 md:p-8 max-w-xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">Индивидуальный заказ</h3>
               <p className="text-muted-foreground text-center mb-8">
                 Закажите уникальное изделие по вашему эскизу
               </p>
@@ -248,7 +254,7 @@ const Index = () => {
 
         {activeSection === 'catalog' && (
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold text-center">Каталог товаров</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center">Каталог товаров</h2>
             <Carousel className="w-full max-w-5xl mx-auto">
               <CarouselContent>
                 {products.map(product => (
@@ -279,8 +285,8 @@ const Index = () => {
         )}
 
         {activeSection === 'about' && (
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl font-bold text-center">О нас</h2>
+          <div className="max-w-3xl mx-auto space-y-6 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center">О нас</h2>
             <p className="text-lg text-muted-foreground">
               Мы — команда профессионалов, создающих изделия из гипса ручной работы уже более 10 лет. 
               Каждое наше изделие — это произведение искусства, выполненное с любовью к деталям.
@@ -293,8 +299,8 @@ const Index = () => {
         )}
 
         {activeSection === 'delivery' && (
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl font-bold text-center">Доставка и оплата</h2>
+          <div className="max-w-3xl mx-auto space-y-6 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center">Доставка и оплата</h2>
             <div className="space-y-4">
               <Card>
                 <CardContent className="p-6">
@@ -327,8 +333,8 @@ const Index = () => {
         )}
 
         {activeSection === 'contacts' && (
-          <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="text-4xl font-bold text-center">Контакты</h2>
+          <div className="max-w-2xl mx-auto space-y-6 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center">Контакты</h2>
             <Card>
               <CardContent className="p-8 space-y-4">
                 <div className="flex items-start gap-3">
