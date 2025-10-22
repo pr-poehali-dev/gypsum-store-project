@@ -73,10 +73,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
+      <header className="sticky top-0 z-50 bg-card border-b-2 border-primary shadow-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-bold text-foreground">GYPSUM CREATIONS</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-primary neon-text">GYPSUM CREATIONS</h1>
             <div className="flex items-center gap-2 md:gap-4">
               <nav className="flex gap-2 md:gap-3">
                 <Button 
@@ -169,7 +169,7 @@ const Index = () => {
         {activeSection === 'home' && (
           <div className="space-y-16">
             <section className="text-center space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Изделия из гипса ручной работы</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-primary neon-text mb-4">Изделия из гипса ручной работы</h2>
               <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
                 Создаём уникальные декоративные элементы для вашего интерьера. 
                 Высокое качество, индивидуальный подход, классическая элегантность.
@@ -177,12 +177,12 @@ const Index = () => {
             </section>
 
             <section>
-              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Популярные изделия</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-secondary">Популярные изделия</h3>
               <Carousel className="w-full max-w-5xl mx-auto">
                 <CarouselContent>
                   {products.map(product => (
                     <CarouselItem key={product.id} className="basis-full md:basis-1/2 lg:basis-1/3">
-                      <Card className="overflow-hidden hover-scale transition-all">
+                      <Card className="overflow-hidden hover-scale transition-all border-2 border-primary hover:neon-glow">
                         <CardContent className="p-0">
                           <img 
                             src={product.image} 
@@ -190,11 +190,11 @@ const Index = () => {
                             className="w-full h-64 object-cover"
                           />
                           <div className="p-6 space-y-3">
-                            <Badge variant="secondary">{product.category}</Badge>
+                            <Badge className="bg-secondary text-secondary-foreground border-none">{product.category}</Badge>
                             <h4 className="text-xl font-semibold">{product.name}</h4>
                             <div className="flex items-center justify-between">
                               <span className="text-2xl font-bold text-primary">{product.price} ₽</span>
-                              <Button onClick={() => addToCart(product)} className="bg-secondary hover:bg-secondary/90">
+                              <Button onClick={() => addToCart(product)} className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold">
                                 <Icon name="ShoppingCart" size={18} className="mr-2" />
                                 В корзину
                               </Button>
@@ -210,13 +210,13 @@ const Index = () => {
               </Carousel>
             </section>
 
-            <section className="bg-muted rounded-lg p-4 md:p-8">
-              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Наши работы</h3>
+            <section className="bg-muted border-2 border-primary p-4 md:p-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-accent">Наши работы</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {galleryImages.map((img, idx) => (
                   <Dialog key={idx}>
                     <DialogTrigger asChild>
-                      <div className="cursor-pointer overflow-hidden rounded-lg hover-scale transition-all">
+                      <div className="cursor-pointer overflow-hidden border-2 border-primary hover:neon-glow hover-scale transition-all">
                         <img 
                           src={img} 
                           alt={`Работа ${idx + 1}`} 
@@ -232,8 +232,8 @@ const Index = () => {
               </div>
             </section>
 
-            <section className="bg-card border border-border rounded-lg p-4 md:p-8 max-w-xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">Индивидуальный заказ</h3>
+            <section className="bg-card border-2 border-primary p-4 md:p-8 max-w-xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center text-primary neon-text">Индивидуальный заказ</h3>
               <p className="text-muted-foreground text-center mb-8">
                 Закажите уникальное изделие по вашему эскизу
               </p>
@@ -244,7 +244,7 @@ const Index = () => {
                   placeholder="Что хотите заказать?" 
                   rows={4}
                 />
-                <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" size="lg">
+                <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold" size="lg">
                   Отправить заявку
                 </Button>
               </form>
@@ -254,7 +254,7 @@ const Index = () => {
 
         {activeSection === 'catalog' && (
           <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Каталог товаров</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary neon-text">Каталог товаров</h2>
             <Carousel className="w-full max-w-5xl mx-auto">
               <CarouselContent>
                 {products.map(product => (
@@ -286,7 +286,7 @@ const Index = () => {
 
         {activeSection === 'about' && (
           <div className="max-w-3xl mx-auto space-y-6 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">О нас</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary neon-text">О нас</h2>
             <p className="text-lg text-muted-foreground">
               Мы — команда профессионалов, создающих изделия из гипса ручной работы уже более 10 лет. 
               Каждое наше изделие — это произведение искусства, выполненное с любовью к деталям.
@@ -300,7 +300,7 @@ const Index = () => {
 
         {activeSection === 'delivery' && (
           <div className="max-w-3xl mx-auto space-y-6 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Доставка и оплата</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary neon-text">Доставка и оплата</h2>
             <div className="space-y-4">
               <Card>
                 <CardContent className="p-6">
@@ -334,7 +334,7 @@ const Index = () => {
 
         {activeSection === 'contacts' && (
           <div className="max-w-2xl mx-auto space-y-6 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Контакты</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary neon-text">Контакты</h2>
             <Card>
               <CardContent className="p-8 space-y-4">
                 <div className="flex items-start gap-3">
@@ -372,7 +372,7 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="bg-card border-t border-border mt-20">
+      <footer className="bg-card border-t-2 border-primary mt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-muted-foreground">
             <p>© 2024 GYPSUM CREATIONS. Все права защищены.</p>
