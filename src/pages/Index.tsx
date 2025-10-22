@@ -218,31 +218,18 @@ const Index = () => {
               </div>
             </section>
 
-            <section className="bg-card border border-border rounded-lg p-8 max-w-2xl mx-auto">
+            <section className="bg-card border border-border rounded-lg p-8 max-w-xl mx-auto">
               <h3 className="text-3xl font-bold mb-6 text-center">Индивидуальный заказ</h3>
               <p className="text-muted-foreground text-center mb-8">
-                Закажите уникальное изделие по вашему эскизу или фотографии
+                Закажите уникальное изделие по вашему эскизу
               </p>
               <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Ваше имя</label>
-                  <Input placeholder="Иван Иванов" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Телефон</label>
-                  <Input placeholder="+7 (___) ___-__-__" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input type="email" placeholder="example@mail.ru" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Описание изделия</label>
-                  <Textarea 
-                    placeholder="Опишите желаемое изделие, размеры, особенности..." 
-                    rows={5}
-                  />
-                </div>
+                <Input placeholder="Ваше имя" className="h-12" />
+                <Input placeholder="Телефон" className="h-12" />
+                <Textarea 
+                  placeholder="Что хотите заказать?" 
+                  rows={4}
+                />
                 <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" size="lg">
                   Отправить заявку
                 </Button>
