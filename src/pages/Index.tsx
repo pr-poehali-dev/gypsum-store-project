@@ -77,34 +77,6 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-bold text-primary neon-text">GYPSUM CREATIONS</h1>
-            <div className="flex items-center gap-2 md:gap-4">
-              <nav className="flex gap-2 md:gap-3">
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setActiveSection('contacts')}
-                  className="text-xs md:text-sm"
-                >
-                  Контакты
-                </Button>
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setActiveSection('about')}
-                  className="text-xs md:text-sm"
-                >
-                  О нас
-                </Button>
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setActiveSection('delivery')}
-                  className="text-xs md:text-sm"
-                >
-                  Доставка
-                </Button>
-              </nav>
-            </div>
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" className="relative">
@@ -374,8 +346,33 @@ const Index = () => {
 
       <footer className="bg-card border-t-2 border-primary mt-20">
         <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-muted-foreground">
-            <p>© 2024 GYPSUM CREATIONS. Все права защищены.</p>
+          <div className="flex flex-col items-center gap-6">
+            <nav className="flex flex-wrap justify-center gap-3">
+              <Button 
+                variant="outline"
+                onClick={() => setActiveSection('contacts')}
+                className="text-sm"
+              >
+                Контакты
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={() => setActiveSection('about')}
+                className="text-sm"
+              >
+                О нас
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={() => setActiveSection('delivery')}
+                className="text-sm"
+              >
+                Доставка
+              </Button>
+            </nav>
+            <div className="text-center text-muted-foreground">
+              <p>© 2024 GYPSUM CREATIONS. Все права защищены.</p>
+            </div>
           </div>
         </div>
       </footer>
