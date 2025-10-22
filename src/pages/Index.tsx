@@ -30,6 +30,8 @@ const Index = () => {
     { id: 3, name: 'Панель с орнаментом', price: 5800, image: 'https://cdn.poehali.dev/projects/5f7834b9-b272-42e4-9708-b4459b260f67/files/f5468cf7-80f6-4f8c-bfda-ade6e2eac0b0.jpg', category: 'Панели' },
     { id: 4, name: 'Классическая колонна', price: 12000, image: 'https://cdn.poehali.dev/projects/5f7834b9-b272-42e4-9708-b4459b260f67/files/9008466e-b9e3-4900-a3d0-1b04b2a09527.jpg', category: 'Архитектура' },
     { id: 5, name: 'Барельеф цветочный', price: 6500, image: 'https://cdn.poehali.dev/projects/5f7834b9-b272-42e4-9708-b4459b260f67/files/75bc2f1c-10f8-4310-af8a-0ac90c3e2db9.jpg', category: 'Барельефы' },
+    { id: 6, name: 'Поднос декоративный', price: 2800, image: 'https://cdn.poehali.dev/projects/5f7834b9-b272-42e4-9708-b4459b260f67/files/07c35903-d9f3-4594-a57f-d4c883ee86b4.jpg', category: 'Аксессуары' },
+    { id: 7, name: 'Подсвечник классический', price: 1900, image: 'https://cdn.poehali.dev/projects/5f7834b9-b272-42e4-9708-b4459b260f67/files/66a86627-7185-43ff-8de7-39ffd63935f8.jpg', category: 'Аксессуары' },
   ];
 
   const galleryImages = [
